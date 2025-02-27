@@ -11,13 +11,7 @@ import imgG from '@/public/images/7.jpg';
 import imgH from '@/public/images/8.jpg';
 import imgI from '@/public/images/9.jpg';
 
-export default function Grid({ containerRef }) {
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ['start end', 'center start'],
-    });
-
-    // Individual animations for each column
+export default function Grid({ containerRef, scrollYProgress }) {
     const column1Y = useTransform(scrollYProgress, [0, 1], [-300, 200]);
     const column3Y = useTransform(scrollYProgress, [0, 1], [300, -200]);
     const height = useTransform(scrollYProgress, [0, 1], ['20vh', '100vh']);

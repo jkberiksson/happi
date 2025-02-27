@@ -5,12 +5,18 @@ import Header from './components/Header';
 import StickySection from './components/StickySection';
 import Lenis from '@studio-freight/lenis';
 import Grid from './components/Grid';
-import { motion } from 'motion/react';
+import { motion, useScroll } from 'motion/react';
 
 export default function Home() {
     const containerRef = useRef(null);
 
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ['start end', 'center start'],
+    });
+
     useEffect(() => {
+        window.scrollTo(0, 0);
         const lenis = new Lenis();
 
         function raf(time) {
@@ -24,10 +30,10 @@ export default function Home() {
     return (
         <div>
             <div className='w-[100vw] h-[100vh] fixed top-0'>
-                <Grid containerRef={containerRef} />
+                <Grid containerRef={containerRef} scrollYProgress={scrollYProgress} />
             </div>
             <Header />
-            <StickySection containerRef={containerRef} />
+            <StickySection />
             <div ref={containerRef} className='w-full h-[200vh] bg-transparent'></div>
             <div className='h-screen w-full bg-black z-20 relative flex items-center justify-center text-center text-6xl font-semibold px-20'>
                 <motion.h1
