@@ -16,7 +16,6 @@ export default function Home() {
     });
 
     useEffect(() => {
-        window.scrollTo(0, 0);
         const lenis = new Lenis();
 
         function raf(time) {
