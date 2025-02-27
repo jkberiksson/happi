@@ -11,19 +11,19 @@ import imgG from '@/public/images/7.jpg';
 import imgH from '@/public/images/8.jpg';
 import imgI from '@/public/images/9.jpg';
 
-export default function Grid({ containerRef, scrollYProgress }) {
-    const column1Y = useTransform(scrollYProgress, [0, 1], [-300, 200]);
-    const column3Y = useTransform(scrollYProgress, [0, 1], [300, -200]);
-    const height = useTransform(scrollYProgress, [0, 1], ['20vh', '100vh']);
-    const width = useTransform(scrollYProgress, [0, 1], ['20vw', '100vw']);
-    const moveLeft = useTransform(scrollYProgress, [0, 1], [0, -900]);
-    const moveRight = useTransform(scrollYProgress, [0, 1], [0, 900]);
-    const moveDown = useTransform(scrollYProgress, [0, 1], [0, 500]);
-    const moveUp = useTransform(scrollYProgress, [0, 1], [0, -500]);
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 2]);
+export default function Grid({ scrollYProgress }) {
+    const column1Y = useTransform(scrollYProgress, [0, 1], [-100, 100]);
+    const column3Y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+    const height = useTransform(scrollYProgress, [0, 1], ['20vh', '40vh']);
+    const width = useTransform(scrollYProgress, [0, 1], ['30vw', '40vw']);
+    const moveLeft = useTransform(scrollYProgress, [0, 1], [0, -100]);
+    const moveRight = useTransform(scrollYProgress, [0, 1], [0, 50]);
+    const moveDown = useTransform(scrollYProgress, [0, 1], [0, 50]);
+    const moveUp = useTransform(scrollYProgress, [0, 1], [0, -100]);
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 1]);
 
     return (
-        <motion.div className='w-full h-screen flex justify-center items-center relative'>
+        <motion.div className='w-full h-screen flex justify-center items-center relative overflow-hidden'>
             <motion.div style={{ height, width }} className='w-[20vw] h-[20vh] relative'>
                 <Image src={imgE} alt='imgE' fill className='object-cover' />
             </motion.div>

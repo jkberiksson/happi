@@ -12,7 +12,7 @@ export default function Home() {
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ['start end', 'center start'],
+        offset: ['start end', 'end start'],
     });
 
     useEffect(() => {
@@ -33,8 +33,8 @@ export default function Home() {
             </div>
             <Header />
             <StickySection />
-            <div ref={containerRef} className='w-full h-[200vh] bg-transparent'></div>
-            <div className='h-screen w-full bg-black z-20 relative flex items-center justify-center text-center text-6xl font-semibold px-20'>
+            <div ref={containerRef} className='w-full h-[100vh] bg-transparent'></div>
+            <div className='h-screen w-full bg-black z-20 relative flex items-center justify-center text-center text-2xl md:text-4xl lg:text-6xl font-medium px-10 lg:px-20'>
                 <motion.h1
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     initial={{ opacity: 0, scale: 0.85, y: 10 }}
@@ -43,7 +43,7 @@ export default function Home() {
                     pushing artistic boundaries.
                 </motion.h1>
                 <motion.h1
-                    className='absolute bottom-0 left-0 py-10 px-20 text-9xl'
+                    className='absolute bottom-0 left-0 py-10 px-10 lg:px-20 text-4xl md:text-6xl lg:text-9xl'
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     initial={{ opacity: 0, scale: 0.85, y: 10 }}
                     transition={{ duration: 1 }}>

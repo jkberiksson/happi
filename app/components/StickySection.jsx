@@ -33,7 +33,7 @@ export default function StickySection() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
-                    className='text-[500px] font-bold z-10'>
+                    className='text-8xl md:text-[200px] lg:text-[300px] xl:text-[400px] font-bold z-10'>
                     Happi
                 </motion.h1>
             </div>
@@ -41,7 +41,7 @@ export default function StickySection() {
             {/* First Section */}
             <motion.div
                 ref={ref1}
-                className='h-[80vh] flex items-center justify-center text-4xl font-semibold mix-blend-difference w-[65vw] mx-auto text-center'>
+                className='h-[80vh] flex items-center justify-center text-xl md:text-4xl font-semibold mix-blend-difference w-[65vw] mx-auto text-center'>
                 <motion.h1 style={{ ...animation1 }}>
                     Happi – Crafting beautiful, user-friendly websites that bring joy to every click.
                 </motion.h1>
@@ -50,7 +50,7 @@ export default function StickySection() {
             {/* Second Section */}
             <motion.div
                 ref={ref2}
-                className='text-4xl h-[80vh] flex items-center justify-center font-semibold mix-blend-difference w-[65vw] mx-auto text-center'>
+                className='text-xl md:text-4xl h-[80vh] flex items-center justify-center font-semibold mix-blend-difference w-[65vw] mx-auto text-center'>
                 <motion.h1 style={{ ...animation2 }}>
                     Great design meets seamless functionality—Happi makes your digital presence unforgettable.
                 </motion.h1>
@@ -59,7 +59,7 @@ export default function StickySection() {
             {/* Third Section */}
             <motion.div
                 ref={ref3}
-                className='text-4xl h-[80vh] flex items-center justify-center font-semibold mix-blend-difference w-[65vw] mx-auto text-center'>
+                className='text-xl md:text-4xl h-[80vh] flex items-center justify-center font-semibold mix-blend-difference w-[65vw] mx-auto text-center'>
                 <motion.h1 style={{ ...animation3 }}>
                     Your brand, your vision, our creativity—Happi turns ideas into stunning websites.
                 </motion.h1>
@@ -67,7 +67,7 @@ export default function StickySection() {
 
             {/* Sticky Gray Section with More Text */}
             <div className='w-full h-[100vh] bg-gray-200 relative p-10 flex items-center justify-center'>
-                <div className='flex' ref={textRef}>
+                <div className='flex flex-col lg:flex-row gap-4' ref={textRef}>
                     <div className='flex-1 self-start overflow-hidden'>
                         <motion.h2
                             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : '200%' }}
@@ -77,7 +77,7 @@ export default function StickySection() {
                         </motion.h2>
                     </div>
 
-                    <div className='flex-1 text-3xl text-black'>
+                    <div className='flex-1 text-left md:text-3xl text-black'>
                         <div className='overflow-hidden'>
                             <motion.p
                                 animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : '200%' }}
